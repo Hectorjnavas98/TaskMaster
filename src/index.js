@@ -15,6 +15,7 @@ app.set('view engine', 'ejs')
 app.use(indexRoutes)
 //ruta para el css
 app.use(express.static(join(__dirname, 'public')))
+app.use(express.static(join(__dirname, 'images')))
 //server
 app.listen(4000)
 console.log('Server corriendo en puerto', 4000)
