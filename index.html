@@ -24,8 +24,13 @@
 <div class="sidebar pt-5 text-white position-fixed vh-100 d-flex flex-column justify-content-between">
   <div>
     <a href="./index.html" class="d-block my-2"><span class="material-symbols-outlined p-3">home</span>Inicio</a>
+<<<<<<< HEAD
     <a href="./newboard.html" class="d-block my-2"><span class="material-symbols-outlined p-3">task</span>Formulario</a>
     <a href="#" class="d-block my-2"><span class="material-symbols-outlined p-3">add_task</span>Crear nueva tarea</a>
+=======
+    <a href="./newboard.html" class="d-block my-2" target="_blank"><span class="material-symbols-outlined p-3">task</span>Nueva Pizzarra</a>
+    <!--<a href="#" class="d-block my-2"><span class="material-symbols-outlined p-3">add_task</span>Crear nueva tarea</a>--> 
+>>>>>>> feature/javascript_interfaz1
   </div>
   <div>
     <a href="#" class="d-block my-5 p-5">Contacto</a>
@@ -36,49 +41,58 @@
 <!--dashbord-->
 <div class="container text-center d-flex justify-content-center align-items-center min-vh-100">
   <div class="row">
-    <div class="col-4">
-      <div class="card diseño-caja p-5" style=" height: 150%;">
+    <div class="col-4" id="board-Programacion">
+      <div class="card diseño-caja p-5" style="height: 150%;">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Trabajo 1</h5>
+          <h5 class="card-title">Pizarra 1</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Programacion</h6>
           <p class="card-text flex-grow-1 pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe debitis velit doloremque ut ipsa obcaecati?</p>
           
           <div class="mt-auto borrado">
-            <a href="#" class="card-link">visualizar</a>
-            <a href="#" class="card-link">borrar</a>
+            <a href="./board.html" class="btn btn-primary">Acceder</a>
+            <button class="btn btn-danger" type="button" data-id="board-Programacion" data-bs-toggle="modal" data-bs-target="#deleteModal">Borrar</button>
+          <!--<a href="#" class="card-link">visualizar</a>
+            <a href="#" class="card-link">borrar</a>-->
           </div>
         </div>
       </div>
     </div>
 
-
-    <div class="col-4">
+    
+    <div class="col-4" id="board-Bootstrap">
       <div class="card diseño-caja p-5" style=" height: 150%;">
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Trabajo 2</h5>
+          <h5 class="card-title">Pizarra 2</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">Boostrap</h6>
           <p class="card-text flex-grow-1 pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe debitis velit doloremque ut ipsa obcaecati?</p>
         
           <div class="mt-auto borrado"> 
-            <a href="#" class="card-link">visualizar</a>
-            <a href="#" class="card-link">borrar</a>
+            <a href="./board.html" class="btn btn-primary">Acceder</a>
+            <button class="btn btn-danger" type="button" data-id="board-Bootstrap" data-bs-toggle="modal" data-bs-target="#deleteModal">Borrar</button>
+          <!--<a href="#" class="card-link">visualizar</a>
+            <a href="#" class="card-link">borrar</a>-->
           </div>
         </div>
       </div>
     </div>
 
-      <div class="col-4">
-        <div class="card diseño-caja p-5" style="height: 150%;">
-          <div class="card-body d-flex flex-column"> 
-            <h5 class="card-title">Trabajo 3</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Java.js</h6>
-            <p class="card-text flex-grow-1 pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe debitis velit doloremque ut ipsa obcaecati?</p>
-            
-            <div class="mt-auto borrado">
-              <a href="#" class="card-link">visualizar</a>
-              <a href="#" class="card-link">borrar</a>
-          </div>
-        </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de borrado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Seguro que quiere borrar la pizarra?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="deleteBoard()" data-bs-dismiss="modal">Aceptar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
@@ -88,8 +102,8 @@
 
 
 
-
-
+    <!--Javascript-->
+    <script src="/js/index.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
