@@ -57,8 +57,15 @@ body{
              
     }
 
-    .diseño-caja-form{
+    .diseño-newboard{
+      border-radius: 15px;
+      background: #f0f0f0;
+      box-shadow:  10px 0px 60px #000000,
+             -0px -1px 60px #000000;
+             
+    }
 
+    .diseño-caja-form{
       border-radius: 50px;
       background: #fffafa;
       box-shadow:  10px 0px 60px #000000,
