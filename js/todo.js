@@ -22,7 +22,6 @@ form.addEventListener("submit", (e) => {
 
   newTask.classList.add("task", "bg-white", "border", "rounded", "p-2", "m-1");
   newTask.setAttribute("draggable", "true");
-  //newTask.innerText = value;
 
   newTask.addEventListener("dragstart", () => {
     newTask.classList.add("is-dragging");
@@ -62,11 +61,9 @@ form.addEventListener("submit", (e) => {
 editModal.addEventListener('show.bs.modal', function (event) {
   let button = event.relatedTarget;
   currentTask = button.parentNode;
-  console.log(currentTask)
   let textTask = currentTask.children[0];
   let modalBodyInput = editModal.querySelector('.modal-body input');
   modalBodyInput.value = textTask.innerText;
-  console.log(textTask.innerText);
 })
 
 editModal.addEventListener('hide.bs.modal', function (event) {
@@ -78,7 +75,6 @@ editModal.addEventListener('hide.bs.modal', function (event) {
 deleteModal.addEventListener('show.bs.modal', function (event) {
   let button = event.relatedTarget;
   currentTask = button.parentNode;
-  console.log(currentTask);
 })
 
 function changeTask() {
