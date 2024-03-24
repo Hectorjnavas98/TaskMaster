@@ -14,6 +14,10 @@
   <!--Iconos de google-->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+  <!-- Bootstrap Icons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+  <title>Bootstrap Icons</title>
+
 </head>
 
 <body>
@@ -29,9 +33,9 @@
   <div class="sidebar pt-5 text-white position-fixed vh-100 d-flex flex-column justify-content-between">
     <div>
       <a href="./index.html" class="d-block my-2"><span class="material-symbols-outlined p-3">home</span>Inicio</a>
-      <a href="./board.html" class="d-block my-2"><span class="material-symbols-outlined p-3">task</span>Mis tableros</a>
-      <a href="./newboard.html" class="d-block my-2"><span class="material-symbols-outlined p-3">add_task</span>Crear
-        nueva tarea</a>
+      <a href="./index.html" class="d-block my-2"><span class="material-symbols-outlined p-3">task</span>Mis tableros</a>
+      <!--<a href="./newboard.html" class="d-block my-2"><span class="material-symbols-outlined p-3">add_task</span>Crear
+        nueva tarea</a> -->
     </div>
     <div>
       <a href="#" class="d-block my-5 p-5">Contacto</a>
@@ -58,29 +62,82 @@
 
           <div class="swim-lane p-3 bg-light border rounded m-2 text-center" id="todo-lane" style="flex: 1;">
             <h3 class="heading">Tareas por hacer</h3>
-            <p class="task bg-white border rounded p-2 m-1" draggable="true">Lorem ipsum dolor sit amet.</p>
-            <p class="task bg-white border rounded p-2 m-1" draggable="true">Lorem ipsum dolor sit amet.</p>
-            <p class="task bg-white border rounded p-2 m-1" draggable="true">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="task bg-white border rounded p-2 m-1" draggable="true">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#edit-modal"><span class="bi-pencil"></span></button>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#delete-modal"><span class="bi-trash"></span></button>
+            </div>
+            <div class="task bg-white border rounded p-2 m-1" draggable="true">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#edit-modal"><span class="bi-pencil"></span></button>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#delete-modal"><span class="bi-trash"></span></button>
+            </div>
+            <div class="task bg-white border rounded p-2 m-1" draggable="true">
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#edit-modal"><span class="bi-pencil"></span></button>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#delete-modal"><span class="bi-trash"></span></button>
+            </div>
           </div>
 
           <div class="swim-lane p-3 bg-light border rounded m-2 text-center " style="flex: 1; ">
             <h3 class="heading">Realizando</h3>
-            <p class="task bg-white border rounded p-2 m-1" draggable="true">Lorem ipsum dolor sit amet consectetur
-              adipisicing.</p>
+            <div class="task bg-white border rounded p-2 m-1" draggable="true">
+              <p>Lorem ipsum dolor sit amet consecteturadipisicing.</p>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#edit-modal"><span class="bi-pencil"></span></button>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#delete-modal"><span class="bi-trash"></span></button>
+            </div>
           </div>
 
           <div class="swim-lane p-3 bg-light border rounded m-2 text-center" style="flex: 1;">
             <h3 class="heading">¡Hecho!</h3>
-            <p class="task bg-white border rounded p-2 m-1" draggable="true">
-              Lorem ipsum dolor sit, amet consectetur adipisicing.
-            </p>
+            <div class="task bg-white border rounded p-2 m-1" draggable="true">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#edit-modal"><span class="bi-pencil"></span></button>
+              <button type="button" class="btn float-end" data-bs-toggle="modal" data-bs-target="#delete-modal"><span class="bi-trash"></span></button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!--Edit Modal -->
+  <div class="modal fade" id="edit-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Editar tarea</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control me-2" placeholder="" id="todo-edit" />
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" onclick="changeTask()" data-bs-dismiss="modal">Aceptar</button>
+          <button type="button" class="btn btn-danger" onclick="cancelModal()" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Delete Modal -->
+  <div class="modal fade" id="delete-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de borrado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>¿Seguro que quiere borrar la tarea?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="deleteTask()" data-bs-dismiss="modal">Aceptar</button>
+          <button type="button" class="btn btn-danger" onclick="cancelModal()" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
